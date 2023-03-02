@@ -5,9 +5,7 @@ const app = express();
 
 app.get("/:sid", async (req, res) => {
     const sid = req.params.sid;
-    console.log(sid);
     const buffer = await getBufferFromSID(sid);
-    console.log(buffer);
     res.type("pdf");
     res.send(Buffer.from(buffer));
 });
