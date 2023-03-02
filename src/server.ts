@@ -1,7 +1,9 @@
 import express from "express";
 import { getBufferFromSID } from "./service";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 
 app.get("/:sid", async (req, res) => {
     const sid = req.params.sid;
